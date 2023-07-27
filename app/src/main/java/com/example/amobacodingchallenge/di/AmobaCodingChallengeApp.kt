@@ -1,4 +1,7 @@
 package com.example.amobacodingchallenge.di
 
-class AmobaCodingChallengeApp {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class AmobaCodingChallengeApp: Application()
