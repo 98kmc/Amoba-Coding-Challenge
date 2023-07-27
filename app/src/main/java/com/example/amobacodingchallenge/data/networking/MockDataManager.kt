@@ -3,10 +3,6 @@ package com.example.amobacodingchallenge.data.networking
 import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.PatientLocationDTO
 import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.PatientDTO
 import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.PatientDetailsDTO
-import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.calculateAge
-import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.toPatientObject
-import com.example.amobacodingchallenge.domain.entities.Gender
-import com.example.amobacodingchallenge.domain.entities.PatientAddress
 import java.util.Date
 import javax.inject.Inject
 
