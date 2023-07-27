@@ -1,12 +1,12 @@
 package com.example.amobacodingchallenge.data.networking.firestore
 
-import com.example.amobacodingchallenge.data.networking.APIManagerRepresentable
+import com.example.amobacodingchallenge.data.networking.APIDataManagerRepresentable
 import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.PatientDTO
 import javax.inject.Inject
 import com.google.firebase.firestore.FirebaseFirestore
 class FirestoreDataManager @Inject constructor(
     private val db : FirebaseFirestore
-) : APIManagerRepresentable {
+) : APIDataManagerRepresentable {
     override suspend fun fetchAllPatients(): List<PatientDTO> {
         TODO("Not yet implemented")
     }
