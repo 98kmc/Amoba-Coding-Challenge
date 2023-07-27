@@ -3,6 +3,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
     id ("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
 }
@@ -72,4 +73,6 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.14.2")
     kapt("com.github.bumptech.glide:compiler:4.14.2")
 
+    //Firestore
+    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
 }

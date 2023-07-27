@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "124354246260",
+    "project_id": "amoba-coding-challenge",
+    "storage_bucket": "amoba-coding-challenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124354246260:android:627f4319f3b68c654bc321",
+        "android_client_info": {
+          "package_name": "com.example.amobacodingchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124354246260-1bdsat6689s1kgniqahnrli7k4ebcn0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH2HzhBrqh5uHaKBrXxm8F-LtZ-Hj8tB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124354246260-1bdsat6689s1kgniqahnrli7k4ebcn0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
