@@ -14,7 +14,7 @@ data class PatientDetailsDTO(
     val phone: StringValue? = null,
     val birthday: StringValue? = null,
     val gender: StringValue? = null,
-    val location: MapValue<PatientLocationDTO>? = null,
+    val location: MapValue<PatientLocationDTO>? = null
 )
 data class PatientDTO(
     val number: IntegerValue? = null,

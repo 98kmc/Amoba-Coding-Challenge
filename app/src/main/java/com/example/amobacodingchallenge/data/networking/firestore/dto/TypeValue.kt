@@ -9,9 +9,5 @@ data class StringValue (
 )
 
 data class MapValue<T> (
-    val mapValue: Fields<T>? = null
-)
-
-data class Fields<T> (
-    val fields: T? = null
+    val mapValue: T? = null
 )
