@@ -33,7 +33,7 @@ fun PatientDTO.toPatientObject(): Patient {
         lastname = this.lastname ?: "",
         image = this.image,
         detail = PatientDetail(
-            phoneNumber = this.detail.phoneNumber?.toInt() ?: 0,
+            phoneNumber = this.detail.phoneNumber ?: "",
             email = this.detail.email ?: "",
             age = this.calculateAge(),
             gender = Gender.fromValue(this.detail.gender.toString()),

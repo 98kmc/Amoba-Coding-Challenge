@@ -1,5 +1,7 @@
 package com.example.amobacodingchallenge.domain.entities
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.util.Date
 
 enum class Gender(val value: String) {
@@ -14,12 +16,14 @@ enum class Gender(val value: String) {
     }
 }
 
+@Parcelize
 data class PatientLocation(
     var longitude: Double,
     var latitude: Double,
-)
+) : Parcelable
+
 data class PatientDetail(
-    var phoneNumber: Int,
+    var phoneNumber: String,
     var email: String,
     var age: String,
     val patientId: String,

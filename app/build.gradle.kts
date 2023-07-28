@@ -76,8 +76,14 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
     implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
+
+    //Maps
+    implementation("com.google.maps.android:maps-compose:1.0.0")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
 
     //Test
     testImplementation("junit:junit:4.13.2")
@@ -91,6 +97,7 @@ dependencies {
 
     //Hilt 2
     implementation("com.google.dagger:hilt-android:2.46.1")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.4.3")
     kapt("com.google.dagger:hilt-android-compiler:2.46.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 

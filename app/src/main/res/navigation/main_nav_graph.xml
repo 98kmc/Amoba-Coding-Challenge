@@ -24,6 +24,42 @@
     <fragment
         android:id="@+id/PatientListContainerFragment"
         android:name="com.example.amobacodingchallenge.ui.patient_list_screen.PatientListContainerFragment"
-        android:label="PatientListContainerFragment" />
+        android:label="PatientListContainerFragment" >
+        <action
+            android:id="@+id/action_PatientListContainerFragment_to_patientDetailFragment2"
+            app:destination="@id/patientDetailFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down">
+            <argument
+                android:name="patientId"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/patientDetailFragment"
+        android:name="com.example.amobacodingchallenge.ui.patient_detail_screen.PatientDetailFragment"
+        android:label="patient_detail_fragment"
+        tools:layout="@layout/patient_detail_fragment">
+
+        <argument
+            android:name="patientId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_patientDetailFragment_to_mapScreenFragment"
+            app:destination="@id/mapScreenFragment" >
+            <argument
+                android:name="patientLocation"
+                app:argType="com.example.amobacodingchallenge.domain.entities.PatientLocation" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/mapScreenFragment"
+        android:name="com.example.amobacodingchallenge.ui.patient_map_screen.MapScreenFragment"
+        android:label="map_view_fragment"
+        tools:layout="@layout/map_view_fragment" >
+        <argument
+            android:name="patientLocation"
+            app:argType="com.example.amobacodingchallenge.domain.entities.PatientLocation" />
+    </fragment>
 
 </navigation>

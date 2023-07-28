@@ -23,7 +23,7 @@ class PatientListRecyclerViewFragment : Fragment() {
     lateinit var viewModel: PatientListViewModel
         private set
 
-    lateinit var onClickAction: ((Int) -> Unit)
+    lateinit var onClickAction: ((String) -> Unit)
         private set
 
     private var _binding: PatientListRecyclerViewFragmentBinding? = null
@@ -74,7 +74,7 @@ class PatientListRecyclerViewFragment : Fragment() {
 
     companion object {
 
-        fun newInstance(viewModel: PatientListViewModel, onClickAction: ((Int) -> Unit)): PatientListRecyclerViewFragment {
+        fun newInstance(viewModel: PatientListViewModel, onClickAction: ((String) -> Unit)): PatientListRecyclerViewFragment {
             val fragment = PatientListRecyclerViewFragment()
             fragment.viewModel = viewModel
             fragment.onClickAction = onClickAction
