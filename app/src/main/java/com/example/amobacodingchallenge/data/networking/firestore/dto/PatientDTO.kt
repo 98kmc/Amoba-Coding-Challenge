@@ -1,4 +1,4 @@
-package com.example.amobacodingchallenge.data.networking.firestore.firestore_dto
+package com.example.amobacodingchallenge.data.networking.firestore.dto
 
 import com.example.amobacodingchallenge.domain.entities.Gender
 import com.example.amobacodingchallenge.domain.entities.Patient
