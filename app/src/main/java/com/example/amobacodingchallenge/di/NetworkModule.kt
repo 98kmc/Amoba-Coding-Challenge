@@ -55,7 +55,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideFirestoreApiRepresentable(
+    fun provideFirestoreRetrofitService(
         retrofitBuilder: Retrofit.Builder
     ): FirestoreRetrofitService =
         retrofitBuilder
@@ -65,7 +65,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideAuthApiRepresentable(
+    fun provideFirebaseAuthRetrofitService(
         retrofitBuilder: Retrofit.Builder
     ): FirebaseAuthRetrofitService =
         retrofitBuilder
