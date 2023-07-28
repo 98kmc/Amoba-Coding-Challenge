@@ -28,23 +28,23 @@ class PatientDetailViewModel @Inject constructor(
     private suspend fun getPatientsById(id: String): Patient = suspendCoroutine { continuation ->
         var currentPatient: Patient? = null
 
-        patientUseCases.getPatientById(id).onEach { response ->
-            when(response) {
-                is Resource.Success -> {
-                    currentPatient = response.data
-                    Log.d("VM1", "getPatientsS: ${response.data}")
-                }
-
-                is Resource.Failure -> {
-                    _state.value = PatientDetailViewModelState(error = response.message.toString())
-                    Log.d("VM1", "getPatientsF: ${response.message}")
-                }
-                is Resource.Loading -> {
-                    _state.value = PatientDetailViewModelState(isLoading = true)
-                    Log.d("VM1", "getPatientsL: ${response.data}")
-                }
-            }
-        }.launchIn(viewModelScope)
+//        patientUseCases.getPatientById(id).onEach { response ->
+//            when(response) {
+//                is Resource.Success -> {
+//                    currentPatient = response.data
+//                    Log.d("VM1", "getPatientsS: ${response.data}")
+//                }
+//
+//                is Resource.Failure -> {
+//                    _state.value = PatientDetailViewModelState(error = response.message.toString())
+//                    Log.d("VM1", "getPatientsF: ${response.message}")
+//                }
+//                is Resource.Loading -> {
+//                    _state.value = PatientDetailViewModelState(isLoading = true)
+//                    Log.d("VM1", "getPatientsL: ${response.data}")
+//                }
+//            }
+//        }.launchIn(viewModelScope)
     }
 }
 

@@ -25,15 +25,15 @@ class PatientUseCases @Inject constructor(
         }
     }
 
-    override fun getPatientById(patientId: String): Flow<Resource<Patient>> = flow {
-        try {
-            emit(Resource.Loading())
-            val patient = repository.fetchPatientById(patientId)
-            emit(Resource.Success(patient))
-        } catch (error: IOException) {
-            emit(Resource.Failure("No internet Access"))
-        } catch (error: Exception) {
-            emit(Resource.Failure(error.message.toString()))
-        }
-    }
+//    override fun getPatientById(patientId: String): Flow<Resource<Patient>> = flow {
+//        try {
+//            emit(Resource.Loading())
+//            val patient = repository.fetchPatientById(patientId)
+//            emit(Resource.Success(patient))
+//        } catch (error: IOException) {
+//            emit(Resource.Failure("No internet Access"))
+//        } catch (error: Exception) {
+//            emit(Resource.Failure(error.message.toString()))
+//        }
+//    }
 }

@@ -12,7 +12,7 @@ interface UseCasesRepresentable {
 
         fun getAllPatients(): Flow<Resource<List<Patient>>>
 
-        fun getPatientById(patientId: String): Flow<Resource<Patient>>
+        //fun getPatientById(patientId: String): Flow<Resource<Patient>>
     }
 
     interface LoginUseCasesRepresentable {

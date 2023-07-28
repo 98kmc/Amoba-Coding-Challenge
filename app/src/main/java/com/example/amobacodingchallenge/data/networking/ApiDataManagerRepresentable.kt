@@ -7,7 +7,7 @@ import com.example.amobacodingchallenge.domain.entities.Patient
 
 interface ApiDataManagerRepresentable {
 
-    suspend fun fetchAllPatients(): List<Document<PatientDTO>>
+    suspend fun fetchAllPatients(): List<PatientDTO>
 
-    suspend fun fetchPatientById(patientId: String): Document<PatientDetailsDTO>
+   // suspend fun fetchPatientById(patientId: String): PatientDetailsDTO
 }

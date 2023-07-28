@@ -13,9 +13,9 @@ class FirestoreDataManager @Inject constructor() : ApiDataManagerRepresentable {
 
     }
 
-    override suspend fun fetchPatientById(patientId: String): Document<PatientDetailsDTO> {
-        TODO("Not yet implemented")
-    }
+    // override suspend fun fetchPatientById(patientId: String): PatientDetailsDTO {
+//        TODO("Not yet implemented")
+//    }
 
 
 }
