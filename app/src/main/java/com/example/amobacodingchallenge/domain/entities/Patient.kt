@@ -30,8 +30,5 @@ data class PatientDetail(
 data class Patient(
     var id: String,
     var name: String,
-    var lastname: String,
-
-    var image: String?,
-    var detail: PatientDetail
+    var image: String?
 )

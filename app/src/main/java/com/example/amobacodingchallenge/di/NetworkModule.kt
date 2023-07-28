@@ -3,7 +3,8 @@ package com.example.amobacodingchallenge.di
 import android.content.Context
 import com.example.amobacodingchallenge.common.Constants
 import com.example.amobacodingchallenge.data.authentication.firestore_auth.AuthInterceptor
-import com.example.amobacodingchallenge.data.networking.retrofit_services.firestore.FirebaseRetrofitService.*
+import com.example.amobacodingchallenge.data.networking.retrofit_services.FirebaseRetrofitService.*
+import com.example.amobacodingchallenge.data.sharedPreferences.SessionManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,8 +31,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideAuthInterceptor(@ApplicationContext context: Context) =
-        AuthInterceptor(context)
+    fun provideAuthInterceptor(sessionManager: SessionManager) =
+        AuthInterceptor(sessionManager)
 
     @Singleton
     @Provides

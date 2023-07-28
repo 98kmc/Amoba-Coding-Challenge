@@ -1,5 +1,7 @@
 package com.example.amobacodingchallenge.data.authentication.dto
 
+import java.io.Serializable
+
 data class UserResponseDTO(
     val kind: String? = null,
     val localId: String?  = null,
@@ -9,4 +11,4 @@ data class UserResponseDTO(
     val registered: Boolean? = null,
     val refreshToken: String? = null,
     val expiresIn: String? = null
-)
+): Serializable

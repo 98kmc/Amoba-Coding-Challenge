@@ -1,4 +1,4 @@
-package com.example.amobacodingchallenge.data.networking.retrofit_services.firestore
+package com.example.amobacodingchallenge.data.networking.retrofit_services
 
 import com.example.amobacodingchallenge.data.authentication.dto.UserResponseDTO
 import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientDTO
@@ -14,7 +14,7 @@ interface FirebaseRetrofitService {
         @GET("(default)/documents/currentPatients")
         suspend fun fetchAllPatients(): List<PatientDTO>
 
-        @GET("(default)/documents/currentPatients/{patientId}")
+        @GET("(default)/documents/currentPatients/{patientId}/details/details")
         suspend fun fetchPatientById(
             @Path("patientId") patientId: String
         ): PatientDTO
@@ -24,11 +24,11 @@ interface FirebaseRetrofitService {
         @POST("accounts:signInWithPassword?key=AIzaSyBH2HzhBrqh5uHaKBrXxm8F-LtZ-Hj8tB4")
         suspend fun signIn(
             @Body userRequestDTO: UserRequest
-        ): UserResponseDTO
+        ): UserResponseDTO?
 
         @POST("accounts:signUp?key=AIzaSyBH2HzhBrqh5uHaKBrXxm8F-LtZ-Hj8tB4")
         suspend fun signUp(
             @Body userRequestDTO: UserRequest
-        ): UserResponseDTO
+        ): UserResponseDTO?
     }
 }
