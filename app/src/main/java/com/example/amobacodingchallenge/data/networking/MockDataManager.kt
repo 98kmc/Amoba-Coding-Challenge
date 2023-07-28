@@ -3,10 +3,11 @@ package com.example.amobacodingchallenge.data.networking
 import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientLocationDTO
 import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientDTO
 import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientDetailsDTO
+import com.example.amobacodingchallenge.data.networking.retrofit_services.firestore.FirebaseRetrofitService
 import java.util.Date
 import javax.inject.Inject
 
-class MockDataManager  @Inject constructor() : FirestoreApiRepresentable {
+class MockDataManager  @Inject constructor() : ApiDataManagerRepresentable {
     override suspend fun fetchAllPatients(): List<PatientDTO> {
         return (0..20).map {
             PatientDTO(

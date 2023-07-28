@@ -1,4 +1,4 @@
-package com.example.amobacodingchallenge.data.authentication
+package com.example.amobacodingchallenge.data.SharedPreferences
 
 import android.content.Context
 import com.example.amobacodingchallenge.R

@@ -1,4 +1,4 @@
-package com.example.amobacodingchallenge.data.networking.auth.dto
+package com.example.amobacodingchallenge.data.authentication.dto
 
 data class UserResponseDTO(
     val kind: String? = null,

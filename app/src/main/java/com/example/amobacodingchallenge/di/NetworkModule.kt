@@ -1,10 +1,9 @@
 package com.example.amobacodingchallenge.di
 
 import android.content.Context
-import com.example.amobacodingchallenge.data.authentication.AuthInterceptor
-import com.example.amobacodingchallenge.data.networking.AuthApiRepresentable
-import com.example.amobacodingchallenge.data.networking.FirestoreApiRepresentable
-import com.example.amobacodingchallenge.di.config.ApiConfig
+import com.example.amobacodingchallenge.common.Constants
+import com.example.amobacodingchallenge.data.authentication.firestore_auth.AuthInterceptor
+import com.example.amobacodingchallenge.data.networking.retrofit_services.firestore.FirebaseRetrofitService.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +14,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -59,21 +57,21 @@ object NetworkModule {
     @Provides
     fun provideFirestoreApiRepresentable(
         retrofitBuilder: Retrofit.Builder
-    ): FirestoreApiRepresentable =
+    ): FirestoreRetrofitService =
         retrofitBuilder
-            .baseUrl(ApiConfig.FIRESTORE_BASE_URL)
+            .baseUrl(Constants.FIRESTORE_BASE_URL)
             .build()
-            .create(FirestoreApiRepresentable::class.java)
+            .create(FirestoreRetrofitService::class.java)
 
     @Singleton
     @Provides
     fun provideAuthApiRepresentable(
         retrofitBuilder: Retrofit.Builder
-    ): AuthApiRepresentable =
+    ): FirebaseAuthRetrofitService =
         retrofitBuilder
-            .baseUrl(ApiConfig.FIRESTORE_BASE_URL)
+            .baseUrl(Constants.FIRESTORE_BASE_URL)
             .build()
-            .create(AuthApiRepresentable::class.java)
+            .create(FirebaseAuthRetrofitService::class.java)
 
 
 }
