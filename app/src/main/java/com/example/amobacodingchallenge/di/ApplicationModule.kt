@@ -1,15 +1,11 @@
 package com.example.amobacodingchallenge.di
 
 import com.example.amobacodingchallenge.data.networking.ApiDataManagerRepresentable
-import com.example.amobacodingchallenge.data.networking.retrofit_services.firestore.FirebaseRetrofitService
 import com.example.amobacodingchallenge.data.networking.MockDataManager
 import com.example.amobacodingchallenge.domain.repositories.PatientsRepository
 import com.example.amobacodingchallenge.domain.repositories.RepositoryRepresentable
 import com.example.amobacodingchallenge.domain.use_cases.PatientUseCases
 import com.example.amobacodingchallenge.domain.use_cases.UseCasesRepresentable
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,12 +32,8 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun providePatientDataManager(db: FirebaseFirestore):
+    fun providePatientDataManager():
             ApiDataManagerRepresentable {
         return MockDataManager()
     }
-
-    @Provides
-    @Singleton
-    fun provideDatabaseFireStore(): FirebaseFirestore = Firebase.firestore
 }

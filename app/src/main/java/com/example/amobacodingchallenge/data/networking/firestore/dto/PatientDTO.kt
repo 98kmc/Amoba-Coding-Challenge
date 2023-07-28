@@ -2,7 +2,8 @@ package com.example.amobacodingchallenge.data.networking.firestore.dto
 
 import com.example.amobacodingchallenge.domain.entities.Gender
 import com.example.amobacodingchallenge.domain.entities.Patient
-import com.example.amobacodingchallenge.domain.entities.PatientAddress
+import com.example.amobacodingchallenge.domain.entities.PatientDetail
+import com.example.amobacodingchallenge.domain.entities.PatientLocation
 import java.util.Date
 
 data class PatientDetailsDTO(
@@ -27,16 +28,21 @@ fun PatientDTO.calculateAge(): String {
 }
 fun PatientDTO.toPatientObject(): Patient {
     return Patient(
-        this.name ?: "",
-        this.lastname ?: "",
-        this.detail.phoneNumber?.toInt() ?: 0,
-        this.detail.email ?: "",
-        this.calculateAge(),
-        Gender.fromValue(this.detail.gender.toString()),
-        PatientAddress(
-            this.detail.address ?: "",
+        id = this.id ?: "",
+        name =this.name ?: "",
+        lastname = this.lastname ?: "",
+        image = this.image,
+        detail = PatientDetail(
+            phoneNumber = this.detail.phoneNumber?.toInt() ?: 0,
+            email = this.detail.email ?: "",
+            age = this.calculateAge(),
+            gender = Gender.fromValue(this.detail.gender.toString()),
+            address = this.detail.address ?: "",
+            patientId = this.detail.patientId ?: "",
+            location =  PatientLocation(
             this.detail.location?.longitude?.toDouble() ?: 0.0007172,
             this.detail.location?.latitude?.toDouble() ?: 0.000454788
+            )
         )
     )
 }

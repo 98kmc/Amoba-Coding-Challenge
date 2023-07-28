@@ -1,5 +1,6 @@
 package com.example.amobacodingchallenge.ui.patient_list_screen.patient_list_recyclerview
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,7 @@ class PatientListAdapter(
                 .into(binding.patientImageview)
 
             binding.patientItemCellContainer.setOnClickListener {
-                onClickAction?.invoke(patient.id)
+                onClickAction?.invoke(patient.id.toInt())
             }
         }
     }
@@ -48,5 +49,12 @@ class PatientListAdapter(
 
     override fun onBindViewHolder(holder: PatientListViewHolder, position: Int) {
         holder.configure(patientList[position])
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(newPatientList: List<Patient>){
+        patientList.clear()
+        patientList.addAll(newPatientList)
+        notifyDataSetChanged()
     }
 }

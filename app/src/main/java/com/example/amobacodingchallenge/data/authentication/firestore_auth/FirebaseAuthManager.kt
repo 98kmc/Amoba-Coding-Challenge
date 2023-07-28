@@ -4,12 +4,6 @@ import com.example.amobacodingchallenge.data.authentication.AuthManagerRepresent
 import com.example.amobacodingchallenge.data.authentication.dto.UserResponseDTO
 import com.example.amobacodingchallenge.domain.entities.UserRequest
 
-class FirebaseAuthManager : AuthManagerRepresentable{
-    override suspend fun signUP(userRequest: UserRequest): UserResponseDTO {
+class FirebaseAuthManager {
 
-    }
-
-    override suspend fun logOut() {
-        TODO("Not yet implemented")
-    }
 }

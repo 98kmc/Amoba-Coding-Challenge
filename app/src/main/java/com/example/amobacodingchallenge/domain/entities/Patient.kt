@@ -1,5 +1,7 @@
 package com.example.amobacodingchallenge.domain.entities
 
+import java.util.Date
+
 enum class Gender(val value: String) {
     MALE("Male"),
     FEMALE("Female"),
@@ -12,12 +14,24 @@ enum class Gender(val value: String) {
     }
 }
 
-data class Patient(
-    var name: String,
-    var lastname: String,
+data class PatientLocation(
+    var longitude: Double,
+    var latitude: Double,
+)
+data class PatientDetail(
     var phoneNumber: Int,
     var email: String,
     var age: String,
+    val patientId: String,
     var gender: Gender,
-    var address: PatientAddress
+    var address: String,
+    var location: PatientLocation
+)
+data class Patient(
+    var id: String,
+    var name: String,
+    var lastname: String,
+
+    var image: String?,
+    var detail: PatientDetail
 )

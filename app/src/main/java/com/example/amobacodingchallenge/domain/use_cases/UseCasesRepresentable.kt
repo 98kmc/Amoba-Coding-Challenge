@@ -1,8 +1,9 @@
 package com.example.amobacodingchallenge.domain.use_cases
 
 import com.example.amobacodingchallenge.common.Resource
-import com.example.amobacodingchallenge.domain.entities.Doctor
+import com.example.amobacodingchallenge.data.authentication.dto.UserResponseDTO
 import com.example.amobacodingchallenge.domain.entities.Patient
+import com.example.amobacodingchallenge.domain.entities.UserRequest
 import kotlinx.coroutines.flow.Flow
 
 interface UseCasesRepresentable {
@@ -16,6 +17,10 @@ interface UseCasesRepresentable {
 
     interface LoginUseCasesRepresentable {
 
-        fun singUp(): Doctor
+        fun singUp(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
+
+        fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
+
+        fun logOut()
     }
 }

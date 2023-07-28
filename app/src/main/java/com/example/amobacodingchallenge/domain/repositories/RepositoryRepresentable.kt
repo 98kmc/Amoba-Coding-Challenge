@@ -1,6 +1,8 @@
 package com.example.amobacodingchallenge.domain.repositories
 
+import com.example.amobacodingchallenge.data.authentication.dto.UserResponseDTO
 import com.example.amobacodingchallenge.domain.entities.Patient
+import com.example.amobacodingchallenge.domain.entities.UserRequest
 
 interface RepositoryRepresentable {
 
@@ -13,8 +15,8 @@ interface RepositoryRepresentable {
 
     interface LoginRepositoryRepresentable {
 
-        suspend fun signIn(): List<Patient>
+        suspend fun signIn(userRequest: UserRequest): UserResponseDTO
 
-        suspend fun signUp(patientId: String): Patient
+        suspend fun signUp(userRequest: UserRequest): UserResponseDTO
     }
 }

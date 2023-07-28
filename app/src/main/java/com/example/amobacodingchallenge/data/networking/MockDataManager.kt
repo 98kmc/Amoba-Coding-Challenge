@@ -17,8 +17,8 @@ class MockDataManager  @Inject constructor() : ApiDataManagerRepresentable {
                 "",
                 PatientDetailsDTO(
                     "$it",
+                    "5",
                     "example.com",
-                    "",
                     Date(),
                     "Masculino",
                      "street",

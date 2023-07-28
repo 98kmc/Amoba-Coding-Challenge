@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/LoginScreenFragment">
+    app:startDestination="@id/PatientListContainerFragment">
+
+    <action
+        android:id="@+id/action_ShowPatientListFragment"
+        app:destination="@id/LoginScreenFragment">
+
+    </action>
 
     <fragment
         android:id="@+id/LoginScreenFragment"
@@ -11,6 +17,13 @@
         android:label="login_screen_fragment"
         tools:layout="@layout/login_screen_fragment" >
 
+        <action
+            android:id="@+id/action_LoginScreenFragment_to_patientListContainerFragment"
+            app:destination="@id/PatientListContainerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/PatientListContainerFragment"
+        android:name="com.example.amobacodingchallenge.ui.patient_list_screen.PatientListContainerFragment"
+        android:label="PatientListContainerFragment" />
 
 </navigation>

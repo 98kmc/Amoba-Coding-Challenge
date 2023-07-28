@@ -87,7 +87,7 @@
             style="@style/Theme.AmobaCodingChallenge.LoginInputEditLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username_edit_text"
+                android:id="@+id/usernameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 style="@style/Theme.AmobaCodingChallenge..LoginUserInputEditText"
@@ -115,7 +115,7 @@
                 style="@style/Theme.AmobaCodingChallenge.LoginInputEditLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_edit_text"
+                    android:id="@+id/passwordEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     style="@style/Theme.AmobaCodingChallenge..LoginPasswordInputEditText"
@@ -136,6 +136,7 @@
             app:cardBackgroundColor="@color/amoba_blue">
 
             <TextView
+                android:id="@+id/signInButtom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="INICIAR SESIÓN"

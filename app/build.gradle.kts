@@ -40,7 +40,6 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
-        compose = true
         viewBinding = true
     }
     sourceSets {
@@ -69,11 +68,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
 
-    //Compose
-    implementation("androidx.compose.ui:ui:1.4.3")
-    implementation("androidx.compose.material:material:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
-
     //Test
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -93,10 +87,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.14.2")
     kapt("com.github.bumptech.glide:compiler:4.14.2")
 
-    //Firestore
-    implementation(enforcedPlatform("com.google.firebase:firebase-bom:32.2.0"))
-    implementation("com.google.firebase:firebase-common-ktx:20.3.3")
-    implementation("com.google.firebase:firebase-firestore-ktx:24.7.0")
+
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
