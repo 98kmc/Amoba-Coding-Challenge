@@ -1,4 +1,4 @@
-package com.example.amobacodingchallenge.data.networking.firestore.firestore_dto
+package com.example.amobacodingchallenge.data.networking.firestore.dto
 
 data class PatientLocationDTO(
     var longitude: String?,

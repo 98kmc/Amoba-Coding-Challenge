@@ -1,6 +1,6 @@
 package com.example.amobacodingchallenge.di
 
-import com.example.amobacodingchallenge.data.networking.APIDataManagerRepresentable
+import com.example.amobacodingchallenge.data.networking.FirestoreApiRepresentable
 import com.example.amobacodingchallenge.data.networking.MockDataManager
 import com.example.amobacodingchallenge.domain.repositories.PatientsRepository
 import com.example.amobacodingchallenge.domain.repositories.RepositoryRepresentable
@@ -28,7 +28,7 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun providePatientRepository(dataManager: APIDataManagerRepresentable):
+    fun providePatientRepository(dataManager: FirestoreApiRepresentable):
             RepositoryRepresentable.PatientsRepositoryRepresentable {
         return PatientsRepository(dataManager)
     }
@@ -36,7 +36,7 @@ class ApplicationModule {
     @Provides
     @Singleton
     fun providePatientDataManager(db: FirebaseFirestore):
-            APIDataManagerRepresentable {
+            FirestoreApiRepresentable {
         return MockDataManager()
     }
 

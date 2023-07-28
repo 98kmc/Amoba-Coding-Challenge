@@ -1,13 +1,13 @@
 package com.example.amobacodingchallenge.domain.repositories
 
-import com.example.amobacodingchallenge.data.networking.APIDataManagerRepresentable
-import com.example.amobacodingchallenge.data.networking.firestore.firestore_dto.toPatientObject
+import com.example.amobacodingchallenge.data.networking.FirestoreApiRepresentable
+import com.example.amobacodingchallenge.data.networking.firestore.dto.toPatientObject
 import com.example.amobacodingchallenge.domain.entities.Patient
 import com.example.amobacodingchallenge.domain.repositories.RepositoryRepresentable.PatientsRepositoryRepresentable
 import javax.inject.Inject
 
 class PatientsRepository @Inject constructor(
-    private val dataManager: APIDataManagerRepresentable
+    private val dataManager: FirestoreApiRepresentable
 ) : PatientsRepositoryRepresentable {
 
     override suspend fun fetchAllPatients(): List<Patient> {
