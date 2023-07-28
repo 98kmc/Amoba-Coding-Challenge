@@ -13,9 +13,10 @@ data class Document<T> (
     companion object {
         fun Document<PatientDTO>.toPatientObject(): Patient {
             return Patient(
-                id = Utils.getIdFromDocumentName(name),
+                number = Utils.getIdFromDocumentName(name).toInt(),
                 name = fields?.name?.stringValue ?: "",
                 image = fields?.image?.stringValue ?: ""
+
             )
         }
     }

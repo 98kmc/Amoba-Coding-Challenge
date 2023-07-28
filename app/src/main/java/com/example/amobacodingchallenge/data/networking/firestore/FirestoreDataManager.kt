@@ -8,8 +8,9 @@ import javax.inject.Inject
 
 class FirestoreDataManager @Inject constructor() : ApiDataManagerRepresentable {
 
-    override suspend fun fetchAllPatients(): List<Document<PatientDTO>> {
-        TODO("Not yet implemented")
+    override suspend fun fetchAllPatients(): List<PatientDTO> {
+        return emptyList()
+
     }
 
     override suspend fun fetchPatientById(patientId: String): Document<PatientDetailsDTO> {

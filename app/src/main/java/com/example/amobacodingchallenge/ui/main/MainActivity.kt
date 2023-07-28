@@ -1,24 +1,19 @@
 package com.example.amobacodingchallenge.ui.main
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.example.amobacodingchallenge.R
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.amobacodingchallenge.R
 import com.example.amobacodingchallenge.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -32,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         lifecycleScope.launch {
             val isLogged = async { checkIfUserIsLogged() }
             val startDestination = if (isLogged.await()) {
@@ -42,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             setUpNavHostFragment(startDestination)
         }
     }
+
     private fun setUpNavHostFragment(startDestination: Int) {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -57,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun checkIfUserIsLogged(): Boolean {
-        return true
+        return viewModel.checkIfUserIsLogged()
     }
 
 

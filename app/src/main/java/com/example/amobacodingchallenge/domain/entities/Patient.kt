@@ -1,5 +1,9 @@
 package com.example.amobacodingchallenge.domain.entities
 
+import com.example.amobacodingchallenge.data.networking.firestore.dto.IntegerValue
+import com.example.amobacodingchallenge.data.networking.firestore.dto.MapValue
+import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientLocationDTO
+import com.example.amobacodingchallenge.data.networking.firestore.dto.StringValue
 import java.util.Date
 
 enum class Gender(val value: String) {
@@ -19,16 +23,17 @@ data class PatientLocation(
     var latitude: Double,
 )
 data class PatientDetail(
-    var phoneNumber: Int,
+    var name: String,
+    var phoneNumber: String,
     var email: String,
     var age: String,
-    val patientId: String,
+    val number: Int,
     var gender: Gender,
     var address: String,
-    var location: PatientLocation
+    var location: PatientLocation,
 )
 data class Patient(
-    var id: String,
+    var number: Int,
     var name: String,
     var image: String?
 )

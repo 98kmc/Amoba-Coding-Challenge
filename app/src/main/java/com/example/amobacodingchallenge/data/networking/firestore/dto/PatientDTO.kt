@@ -16,12 +16,36 @@ data class PatientDetailsDTO(
     val gender: StringValue? = null,
     val location: MapValue<PatientLocationDTO>? = null
 )
+
+fun PatientDetailsDTO.calculateAge(): String {
+    return ""
+}
+fun PatientDetailsDTO.toPatientDetailObject(): PatientDetail {
+    return PatientDetail(
+        name = this.name?.stringValue ?: "no name",
+        phoneNumber = this.phone?.stringValue ?: "No number",
+        email = this.email?.stringValue ?: "",
+        age = this.calculateAge(),
+        gender = Gender.fromValue(this.gender?.stringValue.toString()),
+        address = this.address?.stringValue ?: "",
+        number = this.number?.integerValue ?: 0,
+        location =  PatientLocation(
+            this.location?.mapValue?.longitude?.stringValue?.toDouble() ?: 0.000000,
+            this.location?.mapValue?.latitude?.stringValue?.toDouble() ?: 0.000000
+        )
+    )
+}
 data class PatientDTO(
     val number: IntegerValue? = null,
     val name: StringValue? = null,
     val image: StringValue? = null
-)
-
-fun PatientDTO.calculateAge(): String {
-    return ""
+) {
+    fun toPatientObject(): Patient {
+        return Patient(
+            number = this.number?.integerValue ?: 0,
+            name = this.name?.stringValue ?: "",
+            image = this.image?.stringValue,
+        )
+    }
 }
+

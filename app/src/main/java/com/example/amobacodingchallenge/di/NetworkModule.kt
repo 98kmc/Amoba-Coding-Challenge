@@ -1,6 +1,5 @@
 package com.example.amobacodingchallenge.di
 
-import android.content.Context
 import com.example.amobacodingchallenge.common.Constants
 import com.example.amobacodingchallenge.data.authentication.firestore_auth.AuthInterceptor
 import com.example.amobacodingchallenge.data.networking.retrofit_services.FirebaseRetrofitService.*
@@ -8,7 +7,6 @@ import com.example.amobacodingchallenge.data.sharedPreferences.SessionManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,16 +15,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideHttpLoggingInterceptor(
-        httpLoggingInterceptor: HttpLoggingInterceptor
-    ): HttpLoggingInterceptor {
-        return httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
     @Singleton

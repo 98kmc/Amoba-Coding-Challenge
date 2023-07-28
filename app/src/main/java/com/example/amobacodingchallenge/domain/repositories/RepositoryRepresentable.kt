@@ -15,8 +15,8 @@ interface RepositoryRepresentable {
 
     interface LoginRepositoryRepresentable {
 
-        suspend fun signIn(userRequest: UserRequest): UserResponseDTO
+        suspend fun signIn(userRequest: UserRequest): UserResponseDTO?
 
-        suspend fun signUp(userRequest: UserRequest): UserResponseDTO
+        suspend fun signUp(userRequest: UserRequest)
     }
 }

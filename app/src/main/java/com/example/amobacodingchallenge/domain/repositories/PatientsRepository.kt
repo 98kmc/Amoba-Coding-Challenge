@@ -10,16 +10,10 @@ class PatientsRepository @Inject constructor(
 ) : PatientsRepositoryRepresentable {
 
     override suspend fun fetchAllPatients(): List<Patient> {
-//        val dtoPatientList = dataManager.fetchAllPatients()
-//        //Convert PatientDTo model to Patient
-//        return dtoPatientList.map { it.toPatientObject() }
-        return emptyList()
+        val dtoPatientList = dataManager.fetchAllPatients()
+        //Convert PatientDTo model to Patient
+        return dtoPatientList.map { it.toPatientObject() }
     }
 
-    override suspend fun fetchPatientById(patientId: String) = Patient(
-        id = "",
-        name = "",
-        image = ""
-    )
-//        dataManager.fetchPatientById(patientId).toPatientObject()
+    override suspend fun fetchPatientById(patientId: String) =  dataManager.fetchPatientById(patientId).toPatientObject()
 }

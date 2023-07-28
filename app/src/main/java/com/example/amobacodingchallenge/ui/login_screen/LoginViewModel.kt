@@ -1,15 +1,19 @@
 package com.example.amobacodingchallenge.ui.login_screen
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.amobacodingchallenge.common.Resource
 import com.example.amobacodingchallenge.data.authentication.dto.UserResponseDTO
 import com.example.amobacodingchallenge.domain.entities.UserRequest
 import com.example.amobacodingchallenge.domain.use_cases.UseCasesRepresentable
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+@HiltViewModel
 class LoginViewModel @Inject constructor(
     private val loginUseCases: UseCasesRepresentable.LoginUseCasesRepresentable
 ) : ViewModel() {
@@ -44,7 +48,7 @@ class LoginViewModel @Inject constructor(
                 is Resource.Failure -> _error.emit(response.message.toString())
                 is Resource.Loading -> _isLoading.emit(true)
             }
-        }
+        }.launchIn(viewModelScope)
     }
 
     private suspend fun navigateToPatientList(userResponseDTO: UserResponseDTO) {

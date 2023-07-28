@@ -17,9 +17,9 @@ interface UseCasesRepresentable {
 
     interface LoginUseCasesRepresentable {
 
-        fun singUp(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
+       // fun singUp(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
 
-        fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
+        fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO?>>
 
         fun logOut()
     }
