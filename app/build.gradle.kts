@@ -46,6 +46,7 @@ android {
         getByName("main") {
             res.srcDirs(
                 "src/main/res/layouts/login_screen",
+                "src/main/res/layouts/patient_list_screen",
                 "src/main/res"
             )
         }
