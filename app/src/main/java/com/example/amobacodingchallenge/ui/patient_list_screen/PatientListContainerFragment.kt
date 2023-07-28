@@ -66,11 +66,11 @@ class PatientListContainerFragment : Fragment() {
             .commit()
     }
 
-    private fun navigateToDetailScreen(characterId: Int) {
-//        findNavController().navigate(
-//            PatientListContainerFragmentDirections.actionCharacterListScreenFragmentToCharacterDetailFragment(
-//                characterId
-//            )
-//        )
+    private fun navigateToDetailScreen(characterId: String) {
+        findNavController().navigate(
+            PatientListContainerFragmentDirections.actionPatientListContainerFragmentToPatientDetailFragment2(
+                characterId
+            )
+        )
     }
 }

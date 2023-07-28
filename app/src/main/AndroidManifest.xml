@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AmobaCodingChallenge"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBH2HzhBrqh5uHaKBrXxm8F-LtZ-Hj8tB4"/>
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">

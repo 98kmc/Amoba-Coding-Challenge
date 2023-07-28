@@ -4,6 +4,9 @@ import com.example.amobacodingchallenge.data.networking.firestore.dto.IntegerVal
 import com.example.amobacodingchallenge.data.networking.firestore.dto.MapValue
 import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientLocationDTO
 import com.example.amobacodingchallenge.data.networking.firestore.dto.StringValue
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 import java.util.Date
 
 enum class Gender(val value: String) {
@@ -18,10 +21,12 @@ enum class Gender(val value: String) {
     }
 }
 
+@Parcelize
 data class PatientLocation(
     var longitude: Double,
     var latitude: Double,
-)
+) : Parcelable
+
 data class PatientDetail(
     var name: String,
     var phoneNumber: String,

@@ -14,7 +14,7 @@ import com.example.amobacodingchallenge.domain.entities.Patient
 
 class PatientListAdapter(
     private val patientList: MutableList<Patient>,
-    private val onClickAction: ((Int) -> Unit)?
+    private val onClickAction: ((String) -> Unit)?
 ) : RecyclerView.Adapter<PatientListAdapter.PatientListViewHolder>() {
 
     inner class PatientListViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {

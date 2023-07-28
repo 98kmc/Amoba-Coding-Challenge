@@ -20,6 +20,7 @@ data class PatientDetailsDTO(
 fun PatientDetailsDTO.calculateAge(): String {
     return ""
 }
+
 fun PatientDetailsDTO.toPatientDetailObject(): PatientDetail {
     return PatientDetail(
         name = this.name?.stringValue ?: "no name",
