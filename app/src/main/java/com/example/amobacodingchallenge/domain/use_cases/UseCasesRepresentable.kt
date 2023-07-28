@@ -12,14 +12,14 @@ interface UseCasesRepresentable {
 
         fun getAllPatients(): Flow<Resource<List<Patient>>>
 
-        fun getPatientById(patientId: String): Flow<Resource<Patient>>
+        //fun getPatientById(patientId: String): Flow<Resource<Patient>>
     }
 
     interface LoginUseCasesRepresentable {
 
-        fun singUp(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
+       // fun singUp(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
 
-        fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>
+        fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO?>>
 
         fun logOut()
     }

@@ -14,19 +14,8 @@ import javax.inject.Inject
 class LoginUseCases @Inject constructor(
     private val repository: LoginRepositoryRepresentable
 ) : LoginUseCasesRepresentable{
-    override fun singUp(userRequest: UserRequest): Flow<Resource<UserResponseDTO>>  = flow {
-        try {
-            emit(Resource.Loading())
-            val response = repository.signUp(userRequest)
-            emit(Resource.Success(response))
-        } catch (error: IOException) {
-            emit(Resource.Failure("No internet Access"))
-        } catch (error: Exception) {
-            emit(Resource.Failure(error.message.toString()))
-        }
-    }
 
-    override fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO>> = flow {
+    override fun singIn(userRequest: UserRequest): Flow<Resource<UserResponseDTO?>> = flow {
         try {
             emit(Resource.Loading())
             val response = repository.signIn(userRequest)

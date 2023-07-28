@@ -1,8 +1,7 @@
 package com.example.amobacodingchallenge.domain.repositories
 
 import com.example.amobacodingchallenge.data.networking.ApiDataManagerRepresentable
-import com.example.amobacodingchallenge.data.networking.retrofit_services.firestore.FirebaseRetrofitService
-import com.example.amobacodingchallenge.data.networking.firestore.dto.toPatientObject
+import com.example.amobacodingchallenge.data.networking.firestore.dto.toPatientDetailObject
 import com.example.amobacodingchallenge.domain.entities.Patient
 import com.example.amobacodingchallenge.domain.repositories.RepositoryRepresentable.PatientsRepositoryRepresentable
 import javax.inject.Inject
@@ -17,6 +16,5 @@ class PatientsRepository @Inject constructor(
         return dtoPatientList.map { it.toPatientObject() }
     }
 
-    override suspend fun fetchPatientById(patientId: String) =
-        dataManager.fetchPatientById(patientId).toPatientObject()
+     //suspend fun fetchPatientById(patientId: String) =  dataManager.fetchPatientById(patientId).toPatientDetailObject()
 }

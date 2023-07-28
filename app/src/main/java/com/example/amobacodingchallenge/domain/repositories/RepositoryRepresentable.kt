@@ -10,13 +10,13 @@ interface RepositoryRepresentable {
 
         suspend fun fetchAllPatients(): List<Patient>
 
-        suspend fun fetchPatientById(patientId: String): Patient
+       // suspend fun fetchPatientById(patientId: String): Patient
     }
 
     interface LoginRepositoryRepresentable {
 
-        suspend fun signIn(userRequest: UserRequest): UserResponseDTO
+        suspend fun signIn(userRequest: UserRequest): UserResponseDTO?
 
-        suspend fun signUp(userRequest: UserRequest): UserResponseDTO
+        suspend fun signUp(userRequest: UserRequest)
     }
 }

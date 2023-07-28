@@ -33,7 +33,7 @@ class PatientListAdapter(
                 .into(binding.patientImageview)
 
             binding.patientItemCellContainer.setOnClickListener {
-                onClickAction?.invoke(patient.id)
+                onClickAction?.invoke(patient.number)
             }
         }
     }

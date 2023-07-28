@@ -5,7 +5,7 @@ import com.example.amobacodingchallenge.domain.entities.UserRequest
 
 interface AuthManagerRepresentable {
 
-    suspend fun signUP(userRequest: UserRequest) : UserResponseDTO
+    suspend fun signUp(userRequest: UserRequest) : UserResponseDTO?
 
-    suspend fun logOut()
+    suspend fun signIn(userRequest: UserRequest) : UserResponseDTO?
 }

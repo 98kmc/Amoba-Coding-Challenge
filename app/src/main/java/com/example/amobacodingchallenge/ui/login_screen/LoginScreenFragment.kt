@@ -12,7 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.amobacodingchallenge.R
 import com.example.amobacodingchallenge.databinding.LoginScreenFragmentBinding
 import com.example.amobacodingchallenge.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginScreenFragment : Fragment() {
 
     private val viewModel: LoginViewModel by viewModels()

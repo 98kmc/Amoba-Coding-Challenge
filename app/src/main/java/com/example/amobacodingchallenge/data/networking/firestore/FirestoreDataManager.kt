@@ -1,18 +1,21 @@
 package com.example.amobacodingchallenge.data.networking.firestore
 
 import com.example.amobacodingchallenge.data.networking.ApiDataManagerRepresentable
-import com.example.amobacodingchallenge.data.networking.retrofit_services.firestore.FirebaseRetrofitService
+import com.example.amobacodingchallenge.data.networking.firestore.dto.Document
 import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientDTO
+import com.example.amobacodingchallenge.data.networking.firestore.dto.PatientDetailsDTO
 import javax.inject.Inject
 
 class FirestoreDataManager @Inject constructor() : ApiDataManagerRepresentable {
+
     override suspend fun fetchAllPatients(): List<PatientDTO> {
-        TODO("Not yet implemented")
+        return emptyList()
+
     }
 
-    override suspend fun fetchPatientById(patientId: String): PatientDTO {
-        TODO("Not yet implemented")
-    }
+    // override suspend fun fetchPatientById(patientId: String): PatientDetailsDTO {
+//        TODO("Not yet implemented")
+//    }
 
 
 }
