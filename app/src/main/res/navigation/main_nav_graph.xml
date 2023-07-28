@@ -2,12 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_activity_nav_graph"
-    app:startDestination="@id/loginScreenFragment">
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/LoginScreenFragment">
 
     <fragment
-        android:id="@+id/loginScreenFragment"
+        android:id="@+id/LoginScreenFragment"
         android:name="com.example.amobacodingchallenge.ui.login_screen.LoginScreenFragment"
         android:label="login_screen_fragment"
-        tools:layout="@layout/login_screen_fragment" />
+        tools:layout="@layout/login_screen_fragment" >
+
+    </fragment>
+
 </navigation>

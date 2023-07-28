@@ -38,8 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/main_activity_nav_graph"
+        app:navGraph="@navigation/main_nav_graph"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
