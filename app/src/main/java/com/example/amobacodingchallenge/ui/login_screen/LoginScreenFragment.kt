@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.amobacodingchallenge.R
 import com.example.amobacodingchallenge.databinding.LoginScreenFragmentBinding
+import com.example.amobacodingchallenge.ui.main.MainActivity
 
 class LoginScreenFragment : Fragment() {
 
@@ -30,12 +33,23 @@ class LoginScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         createListeners()
         setObservers()
+        configureToolbar()
     }
 
     private fun setObservers() {
 
     }
 
+    private fun configureToolbar() {
+
+        val toolbar = (requireActivity() as MainActivity).binding.mainToolbar
+        toolbar.visibility = View.INVISIBLE
+
+        //status bar color
+        val window: Window = requireActivity().window
+        window.statusBarColor =
+            ContextCompat.getColor(requireContext(), R.color.amoba_blue)
+    }
     private fun navigateToPatientListScreen() {
         findNavController().navigate(
             LoginScreenFragmentDirections.actionLoginScreenFragmentToPatientListContainerFragment()

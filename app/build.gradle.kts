@@ -41,6 +41,10 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
     }
     sourceSets {
         getByName("main") {
@@ -55,9 +59,16 @@ android {
 
 dependencies {
 
+    implementation("androidx.compose.animation:animation:1.4.3")
+    implementation("androidx.compose.foundation:foundation:1.4.3")
+    implementation("androidx.compose.material:material:1.4.3")
+    implementation("androidx.compose.material3:material3:1.1.1")
+    implementation("androidx.compose.runtime:runtime:1.4.3")
+    implementation("androidx.compose.ui:ui:1.4.3")
+
     //Kotlin
     implementation("androidx.core:core-ktx:1.10.1")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.20")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
 
     //UI
     implementation("androidx.appcompat:appcompat:1.6.1")

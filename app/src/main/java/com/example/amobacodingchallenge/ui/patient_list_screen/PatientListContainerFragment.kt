@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.amobacodingchallenge.R
 import com.example.amobacodingchallenge.databinding.LoginScreenFragmentBinding
@@ -16,6 +17,9 @@ import com.example.amobacodingchallenge.ui.main.MainActivity
 import com.example.amobacodingchallenge.ui.patient_list_screen.patient_list_recyclerview.PatientListAdapter
 import com.example.amobacodingchallenge.ui.patient_list_screen.patient_list_recyclerview.PatientListRecyclerViewFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class PatientListContainerFragment : Fragment() {
